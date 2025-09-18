@@ -11,7 +11,7 @@
             <label for="qtn">Quantidade</label>
         </p-floatlabel>
 
-        <p-button label="Inserir" [raised]="true" (click)="inserir()" class="btn-inserir" severity="info"/>
+        <p-button id="btnInserir" label="Inserir" [raised]="true" (click)="inserir()" class="btn-inserir" severity="info"/>
       </form>
     <div class="container-lista">
       <p-table [value]="listaProduto()">
