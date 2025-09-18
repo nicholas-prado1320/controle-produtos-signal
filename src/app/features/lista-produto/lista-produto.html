@@ -1,0 +1,33 @@
+<div class="container-geral">
+  <div class="container-content">
+      <form class="form-input" [formGroup]="formInput">
+        <p-floatlabel class="cdBarraInput" variant="on">
+            <input pInputText id="cdbarras" formControlName="cdBarras" autocomplete="off">
+            <label for="cdbarras">Código de Barras</label>
+        </p-floatlabel>
+
+        <p-floatlabel class="qtnInput" variant="on">
+            <input pInputText id="qtn" formControlName="quantidade" autocomplete="off">
+            <label for="qtn">Quantidade</label>
+        </p-floatlabel>
+
+        <p-button label="Inserir" [raised]="true" (click)="inserir()" class="btn-inserir" severity="info"/>
+      </form>
+    <div class="container-lista">
+      <p-table [value]="listaProduto()">
+        <ng-template #header>
+          <tr>
+            <th>Código de Barras</th>
+            <th>Quantidade</th>
+          </tr>
+        </ng-template>
+        <ng-template #body let-item>
+          <tr>
+            <td>{{ item.cdBarras }}</td>
+            <td>{{ item.quantidade }}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>
